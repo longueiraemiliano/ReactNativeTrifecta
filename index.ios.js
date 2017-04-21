@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   welcome: {
-    fontSize: 40,
+    fontSize: 20,
     textAlign: 'center',
     margin: 10,
   },

@@ -16,7 +16,7 @@ var config = {
   module: {
     loaders: [
       {
-        // Standard js/jsx compilation
+        // Standard js/jsx compilation.
         test: /\.jsx?/,
         exclude: /node_modules/,
         use: {
@@ -40,6 +40,7 @@ var config = {
         }
       },
       {
+        // This is needed for webpack to import static images in JavaScript files.
         test: /\.(gif|jpe?g|png|svg)$/,
         use: {
           loader: 'url-loader',
@@ -49,6 +50,7 @@ var config = {
     ]
   },
   resolve: {
+    // Maps the 'react-native' import to 'react-native-web'.
     alias: {
       'react-native': 'react-native-web'
     }

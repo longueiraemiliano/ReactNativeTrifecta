@@ -1,3 +1,9 @@
+/**
+ * Sample React Native Web App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -9,18 +15,18 @@ import {
 
 var FadeInView = require('./FadeInView.js');
 
-class ReactNativeTrifecta extends Component {
-  render () {
+export default class ReactNativeTrifecta extends Component {
+  render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
         <FadeInView>
           <Image
             source={require('./img/amplify.png')}
             style={styles.logo}/>
         </FadeInView>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
       </View>
     );
   }
