@@ -1,8 +1,8 @@
 # How to Setup a React Native Project for iOS, Android, and Web
 
-These intructions tie together the instructions from the Native React [getting started](https://facebook.github.io/react-native/docs/getting-started.html) page and the React Native Web [quick start](https://github.com/necolas/react-native-web) and [getting started](https://github.com/necolas/react-native-web/blob/master/docs/guides/getting-started.md) pages. The result being an app running on 3 platforms* you can build on. 
+These intructions tie together the instructions from the Native React [getting started](https://facebook.github.io/react-native/docs/getting-started.html) page and the React Native Web [quick start](https://github.com/necolas/react-native-web) and [getting started](https://github.com/necolas/react-native-web/blob/master/docs/guides/getting-started.md) pages. The result being an app running on 3 platforms\* you can build on.
 
-*Well... these instructions only incude the iOS install, but the basic plumbing for Android is there as well.
+\*Well... these instructions only include the iOS install, but the basic plumbing for Android is there as well.
 
 ## Step 1 - Preliminary React Native Install
 
@@ -16,13 +16,13 @@ Install XCode from the [App Store](https://itunes.apple.com/us/app/xcode/id49779
 
 ## Step 2 - Find right version of React Native and Create Project
 
-You'll need the version of React Native with the React version that is React Native Web compatiable.
+You'll need the version of React Native with the React version that is React Native Web compatible.
 
-The trick is, React Native installs React, and you need to be sure that version is compatiable with React Native Web. So the first thing you need to know is what version of React react-native-web needs, and then what version of react-native has the version of React you need.
+The trick is, React Native installs React, and you need to be sure that version is compatible with React Native Web. So the first thing you need to know is what version of React react-native-web needs, and then what version of react-native has the version of React you need.
 
 Install npm-remote-ls, a node module that can query dependencies remotely
 
-    npm install npm-remote-ls
+    npm install npm-remote-ls -g
 
 Use npm-remote-ls to check the version of react needed by react-native-web (as of this writing, 15.4.2)
 <pre>
@@ -58,7 +58,7 @@ Create the project specifing the version you need
 Install `react-native-web` and dependent modules
 
     cd <project name>
-    npm install --save react-native-web webpack babel-loader url-loader file-loader
+    npm install --save react-native-web webpack babel-loader url-loader file-loader react-dom@15.4
 
 Setup web files
 
@@ -95,7 +95,7 @@ Create `webpack.config.js`
             exclude: /node_modules/,
             use: {
               loader: 'babel-loader',
-              query: { 
+              query: {
                 cacheDirectory: true,
                 presets: ['react-native']
               }
@@ -107,7 +107,7 @@ Create `webpack.config.js`
             include: /node_modules\/react-native-/,
             use : {
               loader: 'babel-loader',
-              query: { 
+              query: {
                 cacheDirectory: true,
                 presets: ['react-native']
               }
@@ -149,12 +149,12 @@ Create `index.html` as an html entry point in `web/public`
 
 Install webpack dev server and fire it up
 
-    npm install webpack-server-dev
+    npm install --save-dev webpack-dev-server
     node_modules/.bin/webpack-dev-server
 
 
-Point your browser to localhost:8080
+Point your browser to http://localhost:8080
 
+For iOS simulation:
 
-
-
+    react-native run-ios
